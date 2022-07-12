@@ -28,13 +28,19 @@ You can import this dependency into your gradle projects by making the following
    For `build.gradle`:
 
    ```groovy
-   dependencies { implementation 'com.github.GeorgeKentMalaysia:aura-translator:1.4.3' }
+   dependencies { 
+      implementation 'com.github.GeorgeKentMalaysia:aura-translator:1.4.3' 
+      implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.13.2'
+      }
    ```
 
    For `build.gradle.kts`:
 
    ```kotlin
-   dependencies { implementation ("com.github.GeorgeKentMalaysia:aura-translator:1.4.3") }
+   dependencies { 
+      implementation("com.github.GeorgeKentMalaysia:aura-translator:1.4.3") 
+      implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.13.2")
+      }
    ```
 
 ## How to use (Kotlin)
