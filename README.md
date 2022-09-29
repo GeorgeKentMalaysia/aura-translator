@@ -97,18 +97,18 @@ fun main() {
 
 ```kotlin
 fun main() {
-    val alarmInput = "FB419A39EF5C000000"
+    val alarmInput = "82190400FA4479D000"
 
     val alarm = AlarmTranslator.toObject(input)
     println(alarm)
     /** output
-    Alarm(leakageDetection=true, noFlowDetection=true, burstDetection=false, backFlowDetection=false, batteryLow=false, faultySensor=true, wireCutDetection=true, tiltDetection=true, magnetTamper=true)
+    Alarm(nonRealtimeBackFlowDetection=true, rebootDetection=false, leakageDetection=false, noFlowDetection=false, burstDetection=false, backFlowDetection=false, batteryLow=false, faultySensor=false, wireCutDetection=false, tiltDetection=false, magnetTamper=false, backFlowReading=999.25)
      */
 
     val alarmNode = AlarmTranslator.toNodes(input)
     println(alarmNode)
     /** output
-    [1, 1, 0, 0, 0, 1, 1, 1, 1]
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 999.25]
      */
 }
 ```
@@ -161,16 +161,16 @@ void main() {
 #### Alarm
 ```java
 void main() {
-     String alarmInput = "FB419A39EF5C000000";
+     String alarmInput = "82190400FA4479D000";
 
      Alarm alarm = AlarmTranslator.INSTANCE.toObject(alarmInput);
      /** output 
-      Alarm(leakageDetection=true, noFlowDetection=true, burstDetection=false, backFlowDetection=false, batteryLow=false, faultySensor=true, wireCutDetection=true, tiltDetection=true, magnetTamper=true)
+      Alarm(nonRealtimeBackFlowDetection=true, rebootDetection=false, leakageDetection=false, noFlowDetection=false, burstDetection=false, backFlowDetection=false, batteryLow=false, faultySensor=false, wireCutDetection=false, tiltDetection=false, magnetTamper=false, backFlowReading=999.25)
       */
 
      List<Integer> alarmNodes = AlarmTranslator.INSTANCE.toNodes(alarmInput);
      /** output
-      [1, 1, 0, 0, 0, 1, 1, 1, 1]
+      [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 999.25]
       */
 }
 ```
